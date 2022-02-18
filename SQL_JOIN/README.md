@@ -67,3 +67,29 @@ SELECT *
 FROM NOTICE N  
 **FULL OUTER JOIN** MEMBER M **ON** N.WRITER_ID = M.ID;  
 &nbsp;
+
+### 3.SELF JOIN
+#### ◎self join 쿼리   
+SELECT M.*, B.NAME AS BOSS_NAME  
+FROM **MEMBER M**   
+LEFT OUTER JOIN **MEMBER B** ON B.ID = M.BOSS_ID; 
+#### ♠EX) ID, NAME 그리고 회원별 작성한 게시글 수를 조회하시오. 
+
+SELECT M.ID, M.NAME, COUNT(N.ID)   
+FROM MEMBER M   
+INNER JOIN NOTICE N ON M.ID = N.WIRTER_ID  
+GROUP BY M.ID, M.NAME   
+▶COUNT를 하기 위해 앞에 컬럼을 한개만 주기 위해서 GROUP BY로 조인해줬다. 
+> INNER JOIN하면서 COUNT가 0인 회원이 없어졌다.  
+&nbsp;
+이럴 경우? OUTER JOIN을 하게되면 주인공(MASTER)를 잡는것이다. 
+
+&nbsp;
+### 3.ORACLE JOIN
+INNER JOIN은  
+FROM MEMBER M, NOTICE N 이렇게 나열.  
+_추가적인 필터링은 AND로 묶는다._ 
+
+>OUTER JOIN을 할려면
+FROM NOTICE N, MEMBER M
+WHERE N.WRITER_ID = M.ID(+)
