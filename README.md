@@ -1,7 +1,8 @@
 # SQL_Rule
 
 &nbsp;
-
+## ◆ [SQL 정규식 알아보러 가기](https://github.com/Kangchaemin/SQL_Rule/blob/main/SQL_정규식/README.md)
+&nbsp;
 ## ◆ [SQL JOIN문 알아보러 가기](https://github.com/Kangchaemin/SQL_Rule/blob/main/SQL_JOIN/README.md)  
 ## ◆ [SQL INSERT / UPDATE / DELETE 알아보러 가기](https://github.com/Kangchaemin/SQL_Rule/blob/main/SQL_INSERT_UPDATE_DELETE/README.md)  
 ## ◆ [SQL GROUP BY / HAVING / ORDERBY 알아보러 가기](https://github.com/Kangchaemin/SQL_Rule/blob/main/SQL_GROUP%20BY_HAVING/README.md)  
