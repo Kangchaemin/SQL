@@ -62,6 +62,7 @@ FROM NOTICE N
 
 ### 2.FULL JOIN
 ![full join 결과](https://user-images.githubusercontent.com/43837994/154614576-2aa7464a-2f9f-4bea-8a3d-a68e9da75924.png)
+#### ★LEFT한거와 RIGHT한거에서 중복을 제거하고 난 값이다.
 #### ◎full join 쿼리   
 SELECT *  
 FROM NOTICE N  
