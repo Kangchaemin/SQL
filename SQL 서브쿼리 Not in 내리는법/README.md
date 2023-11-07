@@ -17,21 +17,6 @@ WHERE B.DESIGN_NO IS NULL
 
 #### 2. 
 <pre>
-
-  SELECT C.컨텐츠ID, C.컨텐츠명
-  FROM 고객 A
-       INNER JOIN 추천컨텐츠 B
-               ON A.고객ID = B.고객ID
-       INNER JOIN 컨텐츠 C
-               ON B.컨텐츠ID = C.컨텐츠ID
-       LEFT OUTER JOIN 비선호콘텐츠 D
-               ON B.고객ID = D.고객ID 
-              AND B.컨텐츠ID = D.컨텐츠ID
-  WHERE A.고객ID = #custid#
-    AND B.추천대상일자 = TO_CHAR(SYSDATE, 'YYYY.MM.DD')
-    AND D.컨텐츠ID IS NULL
-
-  -> LEFT JOIN으로 내리는 법
   
   SELECT C.컨텐츠ID, C.컨텐츠명
   FROM 고객 A
@@ -49,4 +34,19 @@ WHERE B.DESIGN_NO IS NULL
                       WHERE X.고객ID = B.고객ID
                         AND X.컨텐츠ID = B.컨텐츠ID )
   
+    -> LEFT JOIN으로 내리는 법
+
+  SELECT C.컨텐츠ID, C.컨텐츠명
+  FROM 고객 A
+       INNER JOIN 추천컨텐츠 B
+               ON A.고객ID = B.고객ID
+       INNER JOIN 컨텐츠 C
+               ON B.컨텐츠ID = C.컨텐츠ID
+       LEFT OUTER JOIN 비선호콘텐츠 D
+               ON B.고객ID = D.고객ID 
+              AND B.컨텐츠ID = D.컨텐츠ID
+  WHERE A.고객ID = #custid#
+    AND B.추천대상일자 = TO_CHAR(SYSDATE, 'YYYY.MM.DD')
+    AND D.컨텐츠ID IS NULL
+
 </pre>
