@@ -32,3 +32,19 @@
     FROM Weights2 W1;
 </pre>
 ![image](https://github.com/Kangchaemin/SQL/assets/43837994/16a9b293-bca4-49c9-bcdc-4c19c7f549ce)
+
+* * * 
+## 3. 응용 - 중앙값 구하기
+- 윈도우 함수 사용
+<pre>
+  SELECT AVG(weight)
+    FROM (SELECT weight,
+                 2 * ROW_NUMBER() OVER (ORDER BY weight)
+                   - COUNT(*) OVER() AS diff
+            FROM Weights) TMP
+    WHERE diff BETWEEN 0 AND 2;
+</pre>
+마지막 필드 diff는 2 * ROW_NUMBER() - COUNT(*) 입니다.  
+이후에 diff가 0~2인 값을 찾고 평균을 구하는 것입니다.
+![image](https://github.com/Kangchaemin/SQL/assets/43837994/7210d0c4-fddc-49db-88ee-bdcc26d6d341)
+
