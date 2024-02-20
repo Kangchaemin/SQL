@@ -1,4 +1,4 @@
-## ※집계함수
+## ※집계함수 - GROUP BY 절을 사용할때만 가능....
     SUM, MIN, MAX, COUNT, AVG
     
 ```
